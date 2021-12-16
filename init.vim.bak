@@ -1,6 +1,11 @@
 call plug#begin('~/AppData/Local/nvim/plugged')
 Plug 'Neur1n/neuims'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 call plug#end()
+lua<<EOF
+require'nvim-tree'.setup()
+EOF
 autocmd VimEnter * IMSToggle
 noremap a h
 noremap s j
