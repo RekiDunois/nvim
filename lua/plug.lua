@@ -1,5 +1,5 @@
 require('packer').init{
-	
+
 }
 
 return require('packer').startup(function(use)
@@ -9,5 +9,6 @@ return require('packer').startup(function(use)
       			'kyazdani42/nvim-web-devicons', -- optional, for file icon
     		},
     		config = function() require'config.nvimtree' end
-	}	
+		}
+	use {'gcmt/wildfire.vim', event = "BufRead"}
 end)
