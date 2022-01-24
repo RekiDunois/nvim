@@ -11,4 +11,5 @@ return require('packer').startup(function(use)
     		config = function() require'config.nvimtree' end
 		}
 	use {'gcmt/wildfire.vim', event = "BufRead"}
+	use {'mtdl9/vim-log-highlighting'}
 end)

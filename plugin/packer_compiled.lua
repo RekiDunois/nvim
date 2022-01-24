@@ -80,6 +80,11 @@ _G.packer_plugins = {
     path = "/Users/rekidunois/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["vim-log-highlighting"] = {
+    loaded = true,
+    path = "/Users/rekidunois/.local/share/nvim/site/pack/packer/start/vim-log-highlighting",
+    url = "https://github.com/mtdl9/vim-log-highlighting"
+  },
   ["wildfire.vim"] = {
     loaded = false,
     needs_bufread = false,
