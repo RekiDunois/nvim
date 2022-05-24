@@ -10,6 +10,28 @@ M.map = function (mode, lhs, rhs, opts)
 	end
 end
 
+-- nmap create a new mapping in normal mode
+-- @param lhs specify the new keymap
+-- @param rhs specify the keymap or commands
+-- @param opts setting options. Default: { noremap = true, silent = true, eval = false }
+--
+M.nmap = function (lhs, rhs, opts)
+  M.map("n", lhs, rhs, opts)
+end
+
+-- xmap create a new mapping in selection mode
+-- @param lhs specify the new keymap
+-- @param rhs specify the keymap or commands
+-- @param opts setting options. Default: { noremap = true, silent = true, eval = false }
+M.xmap = function (lhs, rhs, opts)
+  M.map("x", lhs, rhs, opts)
+end
+
+-- fmap create a new mapping for lua function
+M.fmap = function (mode, key, func)
+  M.map(mode, key, "", { callback = func })
+end
+
 M.log_err = function(msg,title)
 	vim.notify(msg,vim.log.levels.ERROR,{title=title})
 end
