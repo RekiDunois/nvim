@@ -1,7 +1,7 @@
 local map=require('utils').map
 local xmap=require('utils').xmap
 local nmap=require('utils').nmap
-
+ 
 -- I love wasd
 map('','a','h')
 map('','s','j')
@@ -25,3 +25,6 @@ nmap("<C-v>", [["+p]])
 map("i", "<C-v>", [[<ESC>"+pa]])
 
 nmap("<C-z>", "u")
+nmap("<C-s>", ":w<ENTER>")
+nmap(";", ":")
+
