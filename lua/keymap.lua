@@ -19,6 +19,8 @@ map('','l','w')
 map('','k','a')
 nmap('<C-j>', '<C-w>k')
 nmap('<C-n>', '<C-w>j')
+nmap('<C-l>', '<C-w>l')
+nmap('<C-h>', '<C-w>h')
 
 map('i','jj','<ESC>')
 
