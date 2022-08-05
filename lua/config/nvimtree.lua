@@ -43,6 +43,7 @@ require'nvim-tree'.setup{
 		{ key = "W", action = "" },
 		{ key = "S", action = "" },
 		{ key = "a", action = "" },
+		{ key = "N", cb = tree_cb("create")},
 		{ key = "d", action = "" },
 		{ key = "w", action = "" },
 		{ key = "W", action = "" },
@@ -51,6 +52,8 @@ require'nvim-tree'.setup{
 		{ key = "J", action = "" },
 		{ key = "k", action = "" },
 		{ key = "j", action = "" },
+		{ key = "m", action = "" },
+		{ key = "M", action = "" },
 		{ key = "<S-CR>", cb = tree_cb("tabnew") },
 		{ key = "<Tab>", action = ""}
           },
