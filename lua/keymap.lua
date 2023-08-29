@@ -24,9 +24,6 @@ nmap('<C-h>', '<C-w>h')
 
 map('i','jj','<ESC>')
 
--- nvim-tree
-map('n','ff',':NvimTreeFocus<CR>') -- NvimTreeFocus can switch focus betwen editor and tree panel
-
 -- copy and pase to system
 xmap("<C-c>", [["+y]])
 xmap("<C-x>", [["+x]])
@@ -34,12 +31,11 @@ nmap("<C-v>", [["+p]])
 map("i", "<C-v>", [[<ESC>"+pa]])
 
 nmap("<C-z>", "u")
--- nmap("<C-y>", "y")
 
 nmap("<C-s>", ":w<ENTER>")
 
 -- tabpage
 nmap("<S-Tab>", ":tabprevious<CR>")
 nmap("<Tab>", ":tabnext<CR>")
-nmap("<C-t>n", ":tabnew<CR>")
+nmap("<C-t>", ":tabnew<CR>")
 
