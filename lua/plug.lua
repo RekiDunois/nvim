@@ -54,4 +54,9 @@ return require('packer').startup(function(use)
         },
         config = function() require("config.nvim-cmp") end
     }
+    use {
+        "nvim-lualine/lualine.nvim",
+        config = function() require('config.statusline') end
+    }
+
 end)

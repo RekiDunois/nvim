@@ -56,6 +56,7 @@ require("neo-tree").setup({
     update_focused_file = {enable = true, update_cwd = true},
     close_if_last_window = false,
     sources = {"filesystem", "buffers", "git_status", "document_symbols"},
+    source_selector = {statusline = false, winbar = false},
     event_handlers = {
 
         {
@@ -65,7 +66,7 @@ require("neo-tree").setup({
                 vim.api.nvim_exec(
                     'Neotree reveal=true position=left action=show', true)
             end
-        }
+        },
 
     },
     filesystem = {
