@@ -2,7 +2,7 @@ vim.g.neo_tree_remove_legacy_commands = 1
 
 local map = require('utils').map
 
-map('n', 'ff', ':Neotree reveal=true dir=.<CR>')
+map('n', 'ff', ':Neotree reveal=true position=left dir=.<CR>')
 
 local function deal_BufWinEnter_event(data)
     local fromQt = vim.fn.argv()[1]
@@ -11,7 +11,7 @@ local function deal_BufWinEnter_event(data)
 
     if real_file_fromQt then
         vim.cmd.cd(dirname)
-        vim.api.nvim_exec('Neotree reveal=true', true)
+        vim.api.nvim_exec('Neotree reveal=true position=float', true)
         return
     end
 end
@@ -34,7 +34,7 @@ local function deal_VimEnter_event(data)
     if real_file then return end
 
     -- open the tree
-    vim.api.nvim_exec('Neotree reveal=true', true)
+    vim.api.nvim_exec('Neotree reveal=true position=float', true)
 end
 
 local function open_nvim_tree(data)
@@ -56,6 +56,18 @@ require("neo-tree").setup({
     update_focused_file = {enable = true, update_cwd = true},
     close_if_last_window = false,
     sources = {"filesystem", "buffers", "git_status", "document_symbols"},
+    event_handlers = {
+
+        {
+            event = "file_opened",
+            handler = function(file_path)
+                -- show tree when open file
+                vim.api.nvim_exec(
+                    'Neotree reveal=true position=left action=show', true)
+            end
+        }
+
+    },
     filesystem = {
         -- hijack_netrw_behavior = "open_current",
         filtered_items = {
@@ -73,7 +85,6 @@ require("neo-tree").setup({
         }
     },
     window = {
-        position = "left",
         mappings = {
             ["<c-f>"] = "filter_on_submit",
             ["f"] = "",
