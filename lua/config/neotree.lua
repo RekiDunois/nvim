@@ -12,6 +12,7 @@ local function deal_BufWinEnter_event(data)
     if real_file_fromQt then
         vim.cmd.cd(dirname)
         vim.api.nvim_exec('Neotree reveal=true position=float', true)
+        vim.api.nvim_exec('TransparentDisable', true)
         return
     end
 end
@@ -35,6 +36,7 @@ local function deal_VimEnter_event(data)
 
     -- open the tree
     vim.api.nvim_exec('Neotree reveal=true position=float', true)
+    vim.api.nvim_exec('TransparentDisable', true)
 end
 
 local function open_nvim_tree(data)
@@ -61,12 +63,13 @@ require("neo-tree").setup({
 
         {
             event = "file_opened",
-            handler = function(file_path)
+            handler = function()
                 -- show tree when open file
                 vim.api.nvim_exec(
                     'Neotree reveal=true position=left action=show', true)
+                vim.api.nvim_exec('TransparentEnable', true)
             end
-        },
+        }
 
     },
     filesystem = {

@@ -1,6 +1,19 @@
 require('packer').init {}
 
 return require('packer').startup(function(use)
+    use {
+        "craftzdog/solarized-osaka.nvim",
+        config = function() require 'config.color-theme-osaka' end
+    }
+    use {
+        "xiyaowong/transparent.nvim",
+        config = function()
+            require('transparent').setup {
+                groups = {"NeoTreeNormal", "NeoTreeNormalNC"},
+                exclude_groups = {"NormalFloat"}
+            }
+        end
+    }
     use {"plasticboy/vim-markdown", ft = {"markdown"}}
     use {'gcmt/wildfire.vim', event = "BufRead"}
     use {'mtdl9/vim-log-highlighting'}
