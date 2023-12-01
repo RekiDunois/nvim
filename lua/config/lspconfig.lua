@@ -1,4 +1,7 @@
 local lspconfig = require('lspconfig')
+
+vim.diagnostic.config({signs = false})
+
 lspconfig.tsserver.setup {
     settings = {
         typescript = {
@@ -40,6 +43,7 @@ lspconfig.lua_ls.setup {
                     -- "--log-level=trace",
                 }
             },
+
             hint = {
                 enable = true,
                 setType = false,
