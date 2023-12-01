@@ -42,4 +42,16 @@ return require('packer').startup(function(use)
         'MunifTanjim/prettier.nvim',
         config = function() require('config.prettier-nvim') end
     }
+    use {
+        "hrsh7th/nvim-cmp",
+        requires = {
+            -- from lsp
+            "hrsh7th/cmp-nvim-lsp", -- for function parameters
+            "hrsh7th/cmp-nvim-lsp-signature-help", -- for OS path
+            "hrsh7th/cmp-path", -- for words in current buffer
+            "hrsh7th/cmp-buffer", -- for vim command line
+            "hrsh7th/cmp-cmdline" -- for snippets
+        },
+        config = function() require("config.nvim-cmp") end
+    }
 end)
