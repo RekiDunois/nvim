@@ -92,7 +92,8 @@ require("neo-tree").setup({
             ["w"] = "",
             ["a"] = "",
             ["d"] = "",
-            ["<c-d>"] = "delete"
+            ["<c-d>"] = "delete",
+            ["A"] = "add"
         },
         width = 28
     },
