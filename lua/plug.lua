@@ -30,4 +30,13 @@ return require('packer').startup(function(use)
         config = function() require("config.lua-format") end,
         ft = {"lua"}
     }
+    use('neovim/nvim-lspconfig')
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        config = function() require('config.null_ls') end
+    }
+    use {
+        'MunifTanjim/prettier.nvim',
+        config = function() require('config.prettier-nvim') end
+    }
 end)
