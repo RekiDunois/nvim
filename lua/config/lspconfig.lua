@@ -1,6 +1,8 @@
 local lspconfig = require('lspconfig')
 
-vim.diagnostic.config({signs = false})
+vim.diagnostic.config({ signs = false })
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
 
 lspconfig.tsserver.setup {
     settings = {
@@ -36,8 +38,8 @@ lspconfig.lua_ls.setup {
     single_file_support = true,
     settings = {
         Lua = {
-            workspace = {checkThirdParty = false},
-            completion = {workspaceWord = true, callSnippet = "Both"},
+            workspace = { checkThirdParty = false },
+            completion = { workspaceWord = true, callSnippet = "Both" },
             misc = {
                 parameters = {
                     -- "--log-level=trace",
@@ -52,12 +54,12 @@ lspconfig.lua_ls.setup {
                 semicolon = "Disable",
                 arrayIndex = "Disable"
             },
-            doc = {privateName = {"^_"}},
-            type = {castNumberToInteger = true},
+            doc = { privateName = { "^_" } },
+            type = { castNumberToInteger = true },
             diagnostics = {
-                disable = {"incomplete-signature-doc", "trailing-space"},
+                disable = { "incomplete-signature-doc", "trailing-space" },
                 -- enable = false,
-                groupSeverity = {strong = "Warning", strict = "Warning"},
+                groupSeverity = { strong = "Warning", strict = "Warning" },
                 groupFileStatus = {
                     ["ambiguity"] = "Opened",
                     ["await"] = "Opened",
@@ -72,10 +74,13 @@ lspconfig.lua_ls.setup {
                     ["unbalanced"] = "Opened",
                     ["unused"] = "Opened"
                 },
-                unusedLocalExclude = {"_*"}
+                unusedLocalExclude = { "_*" },
+                neededFileStatus = {
+                    ["codestyle-check"] = "Any"
+                }
             },
             format = {
-                enable = false,
+                enable = true,
                 defaultConfig = {
                     indent_style = "space",
                     indent_size = "2",

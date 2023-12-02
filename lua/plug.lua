@@ -10,20 +10,20 @@ return require('packer').startup(function(use)
         config = function()
             require('transparent').setup {
                 groups = {"NeoTreeNormal", "NeoTreeNormalNC"},
-                exclude_groups = {"NormalFloat"}
+                exclude_groups = { "NormalFloat" }
             }
         end
     }
-    use {"plasticboy/vim-markdown", ft = {"markdown"}}
-    use {'gcmt/wildfire.vim', event = "BufRead"}
-    use {'mtdl9/vim-log-highlighting'}
-    use {'is0n/fm-nvim'}
+    use { "plasticboy/vim-markdown", ft = { "markdown" } }
+    use { 'gcmt/wildfire.vim', event = "BufRead" }
+    use { 'mtdl9/vim-log-highlighting' }
+    use { 'is0n/fm-nvim' }
     use {
         'notjedi/nvim-rooter.lua',
         -- config = function() require'nvim-rooter'.setup() end
         require('nvim-rooter').setup {
-            rooter_patterns = {'.git', '.hg', '.svn'},
-            trigger_patterns = {'*'},
+            rooter_patterns = { '.git', '.hg', '.svn' },
+            trigger_patterns = { '*' },
             manual = false,
             fallback_to_parent = false
         }
@@ -37,11 +37,6 @@ return require('packer').startup(function(use)
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         },
         config = function() require("config.neotree") end
-    }
-    use {
-        'jeanlucthumm/nvim-lua-format',
-        config = function() require("config.lua-format") end,
-        ft = {"lua"}
     }
     use {
         'neovim/nvim-lspconfig',
@@ -59,11 +54,11 @@ return require('packer').startup(function(use)
         "hrsh7th/nvim-cmp",
         requires = {
             -- from lsp
-            "hrsh7th/cmp-nvim-lsp", -- for function parameters
+            "hrsh7th/cmp-nvim-lsp",                -- for function parameters
             "hrsh7th/cmp-nvim-lsp-signature-help", -- for OS path
-            "hrsh7th/cmp-path", -- for words in current buffer
-            "hrsh7th/cmp-buffer", -- for vim command line
-            "hrsh7th/cmp-cmdline" -- for snippets
+            "hrsh7th/cmp-path",                    -- for words in current buffer
+            "hrsh7th/cmp-buffer",                  -- for vim command line
+            "hrsh7th/cmp-cmdline",                 -- for snippets
         },
         config = function() require("config.nvim-cmp") end
     }
@@ -71,5 +66,4 @@ return require('packer').startup(function(use)
         "nvim-lualine/lualine.nvim",
         config = function() require('config.statusline') end
     }
-
 end)
