@@ -59,6 +59,14 @@ return require('packer').startup(function(use)
             "hrsh7th/cmp-path",                    -- for words in current buffer
             "hrsh7th/cmp-buffer",                  -- for vim command line
             "hrsh7th/cmp-cmdline",                 -- for snippets
+            -- for snippets
+            {
+                "hrsh7th/vim-vsnip",
+                init = function()
+                    vim.g.vsnip_snippet_dir =
+                        vim.fn.stdpath("config") .. "/vsnip"
+                end
+            }, "hrsh7th/cmp-vsnip"
         },
         config = function() require("config.nvim-cmp") end
     }
