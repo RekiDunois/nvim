@@ -78,7 +78,7 @@ require("neo-tree").setup({
             hide_hidden = false,
             always_show = {".config", ".gitignore"}
         },
-        follow_current_file = {enabled = true, leave_dirs_open = true}
+        follow_current_file = {enabled = false, leave_dirs_open = true}
 
     },
     buffers = {
@@ -97,7 +97,8 @@ require("neo-tree").setup({
             ["a"] = "",
             ["d"] = "",
             ["<c-d>"] = "delete",
-            ["A"] = "add"
+            ["A"] = "add",
+            ["<Tab>"] = "open_tabnew"
         },
         width = 28
     },
