@@ -9,7 +9,8 @@ return require('packer').startup(function(use)
         "xiyaowong/transparent.nvim",
         config = function()
             require('transparent').setup {
-                extra_groups = { "NeoTreeNormal", "NeoTreeNormalNC" },
+                extra_groups = { "NeoTreeNormal",
+                    "NeoTreeNormalNC", },
                 exclude_groups = { "NormalFloat" }
             }
         end
