@@ -75,11 +75,11 @@ return require('packer').startup(function(use)
         "nvim-lualine/lualine.nvim",
         config = function() require('config.statusline') end
     }
-    use {
-        "folke/noice.nvim",
-        requires = {
-            "MunifTanjim/nui.nvim"
-        },
-        config = function() require('config.noice-nvim') end
-    }
+    --    use {
+    --        "folke/noice.nvim",
+    --        requires = {
+    --            "MunifTanjim/nui.nvim"
+    --        },
+    --        config = function() require('config.noice-nvim') end
+    --    }
 end)
