@@ -30,8 +30,6 @@ xmap("<C-x>", [["+x]])
 nmap("<C-v>", [["+p]])
 map("i", "<C-v>", [[<ESC>"+pa]])
 
-nmap("<C-z>", "u")
-
 nmap("<C-s>", ":w<ENTER>")
 
 -- tabpage
