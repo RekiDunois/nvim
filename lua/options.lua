@@ -9,3 +9,5 @@ vim.cmd(':set ignorecase smartcase')
 vim.cmd(':set tabstop=4')
 vim.cmd(':set shiftwidth=4')
 vim.cmd(':set expandtab')
+vim.opt.shell = 'fish'
+vim.opt.cursorline = true
