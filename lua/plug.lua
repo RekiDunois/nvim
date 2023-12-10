@@ -9,9 +9,12 @@ return require('packer').startup(function(use)
         "xiyaowong/transparent.nvim",
         config = function()
             require('transparent').setup {
-                extra_groups = { "NeoTreeNormal",
-                    "NeoTreeNormalNC", },
-                exclude_groups = { "NormalFloat" }
+                groups = {
+                    -- "NeoTreeNormal",
+                    "NeoTreeWinSeparator",
+                    -- "NeoTreeNormalNC",
+                },
+                exclude_groups = { "NormalFloat", "NeoTreeFloatBorder", "NeoTreeFloatTitle" }
             }
         end
     }
@@ -21,13 +24,14 @@ return require('packer').startup(function(use)
     use { 'is0n/fm-nvim' }
     use {
         'notjedi/nvim-rooter.lua',
-        -- config = function() require'nvim-rooter'.setup() end
-        require('nvim-rooter').setup {
-            rooter_patterns = { '.git', '.hg', '.svn' },
-            trigger_patterns = { '*' },
-            manual = false,
-            fallback_to_parent = false
-        }
+        config = function()
+            require('nvim-rooter').setup {
+                rooter_patterns = { '.git', '.hg', '.svn' },
+                trigger_patterns = { '*' },
+                manual = false,
+                fallback_to_parent = false
+            }
+        end
     }
     use {
         'nvim-neo-tree/neo-tree.nvim',
@@ -74,6 +78,17 @@ return require('packer').startup(function(use)
     use {
         "nvim-lualine/lualine.nvim",
         config = function() require('config.statusline') end
+    }
+    use {
+        "numToStr/Comment.nvim",
+        config = function()
+            require('Comment').setup(
+                {
+                    toggler = { line = '<c-/>' },
+                    opleader = { line = '<c-/>' }
+                }
+            )
+        end
     }
     --    use {
     --        "folke/noice.nvim",
